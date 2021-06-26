@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title> Fruits | Responsive Landiing Page </title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <section>
+            <div class="bg"></div>
+            <header>
+                <a href="#" class="logo">Fruits</a>
+                <div class="toggle"></div>
+            </header>
+            <div class="content">
+                <div class="textbox">
+                    <h2>Good Luck!</h2>
+                    <p>Being appointed to the very first job or getting a new job is always 
+                        a moment of great significance in one’s life. A new job proposes a lot of 
+                        opportunities to succeed in a career, so it indeed is a precious thing to celebrate!
+                        It makes me so happy to watch you chase your dreams (and catch them)! Congratulations on your new job!
+                    </p>
+                    <a href="https://leninponnappa.github.io/sowmya/">Go Back!</a>
+                </div>
+                <div class="imgbox">
+                    <img style="transform:scaleX(-1);" class="fruits" src="11.png">
+                </div>
+            </div>
+            <ul class="thumb">
+                <li class="active" data-text="Sowmya"><img style="transform:scaleX(-1);" src="11.png" onclick="imgSlider('11.png');changeBgColor('#5390d9')"></li>
+                <li data-text="Sowmya"><img style="transform:scaleX(-1);" src="22.png" onclick="imgSlider('22.png');changeBgColor('#3d5a80')"></li>
+                <li data-text="Sowmya"><img style="transform:scaleX(-1);" src="33.png" onclick="imgSlider('33.png');changeBgColor('#e09f3e')"></li>
+                <li data-text="Sowmya"><img style="transform:scaleX(-1);" src="44.png" onclick="imgSlider('44.png');changeBgColor('#90e0ef')"></li>
+                <li data-text="Sowmya"><img style="transform:scaleX(-1);" src="55.png" onclick="imgSlider('55.png');changeBgColor('#f0ead2')"></li>
+            </ul>
+        </section>
+        <script>
+            //toggler function to toggle the menu
+            let menuToggle = document.querySelector('.toggle');
+            let navigation = document.querySelector('.navigation');
+            menuToggle.onclick = function(){
+                menuToggle.classList.toggle('active');
+                navigation.classList.toggle('active');
+            }
+            //change image on click
+            function imgSlider(anything){
+                document.querySelector('.fruits').src = anything;
+
+            }
+            //change background color
+            function changeBgColor(color){
+                const bg = document.querySelector('.bg');
+                bg.style.background = color
+            }
+            //adding active class
+            let el = document.querySelectorAll('.thumb li');
+            for(let i = 0; i < el.length; i++){
+                el[i].onclick = function(){
+                    var c = 0;
+                    while (c < el.length){
+                        el[c++].className = 'check';
+                    }
+                    el[i].className = 'check active';
+                }
+            }
+        </script>
+    </body>
+</html>
